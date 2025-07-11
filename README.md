@@ -1,30 +1,36 @@
 # 💰 Expense Tracker - Django Project
 
-A complete expense tracking web application built with Django. It helps users manage income and expenses with ease. Includes features like filtering, charts, dark mode, CSV export, and more.
+A full-featured personal expense tracking web app built with Django. Users can manage income and expenses, view insights, toggle dark/light mode, and get real-time feedback using modern UI elements.
 
 ---
 
 ## 📌 Overview
 
 This Django project allows users to:
+- Register, login, logout securely
 - Track income and expenses
 - Filter transactions by date and category
 - Search by description
-- View summary statistics
-- Export to CSV
-- Toggle dark/light themes
+- View total income, expenses, and balance
+- Export filtered data to CSV
+- Visualize data with charts
+- Toggle light/dark mode with theme persistence
 
 ---
 
 ## 🔧 Features
 
+- ✅ User Authentication (Signup/Login/Logout)
+- ✅ Remember Me checkbox
+- ✅ Toast messages on success/error (login, signup, logout)
 - ✅ Add / Edit / Delete transactions
 - ✅ Filter by category and date range
 - ✅ Search by description
 - ✅ Export to CSV
 - ✅ Pie chart by category (Chart.js)
-- ✅ Responsive design with Bootstrap
-- ✅ Persistent Dark Mode (via localStorage)
+- ✅ Responsive Bootstrap UI
+- ✅ Dark Mode Toggle (persisted using localStorage)
+- ✅ Styled forms (login, signup, add/edit transaction)
 
 ---
 
@@ -34,6 +40,7 @@ This Django project allows users to:
 - SQLite (default DB)
 - HTML + Bootstrap 5
 - Chart.js (for graphs)
+- JavaScript (localStorage, theme toggle, toasts)
 
 ---
 
@@ -44,6 +51,8 @@ This Django project allows users to:
 - pip
 - Virtualenv (recommended)
 
+---
+
 ### Installation
 
 ```bash
@@ -53,50 +62,68 @@ cd expense-tracker
 
 # Setup virtual environment
 python -m venv venv
-venv\\Scripts\\activate    # On Windows
+venv\Scripts\activate   # On Windows
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run migrations
+# Apply migrations
 python manage.py migrate
 
-# Start the server
+# Run server
 python manage.py runserver
 
+# Open in browser
+http://127.0.0.1:8000/
 
-Visit: http://127.0.0.1:8000/
 
-# 🗃 Folder Structure
+📁 Folder Structure
 expense_tracker/
-├── expense_tracker/          # Settings & URLs
-├── tracker/                  # App with templates, models, views, etc.
+├── expense_tracker/          # Django project (settings, urls)
+├── tracker/                  # App (models, views, templates)
 │   ├── templates/tracker/
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
+├── static/                   # (optional) static assets
 ├── manage.py
 ├── requirements.txt
 
 
-# 📤 Export CSV
-Filter your transactions and download them in .csv format with one click.
+📤 Export CSV
+Filter your transactions (by category/date), and click Export CSV to download your data instantly.
 
-#🌗 Dark Mode
-Dark mode toggle persists using localStorage. It applies across:
 
-Home
+🌗 Dark Mode
+Toggle between Light and Dark mode.
+Theme preference is saved using localStorage and applies globally:
 
-Add Transaction
+-> Home page
 
-Edit Transaction
+-> Add Transaction
 
-# 🔍 Search
-You can search transactions by description (case-insensitive). “Reset” button clears filters and search term.
+-> Edit Transaction
 
-#📄 License
+-> Login / Signup
+
+🔔 Toast Messages
+User feedback is shown using toast alerts on:
+
+-> Successful login, signup, logout
+
+-> Form errors (like invalid credentials)
+
+Toasts auto-dismiss and are styled according to status (success/danger).
+
+🔍 Search
+You can search your transactions by description.
+Search is case-insensitive and works alongside filters.
+“Reset” button clears all filters.
+
+
+📄 License
 This project is open-source and available under the MIT License.
 
-# 👤 Author
+👤 Author
 Muazam Abbas
 GitHub: MuazamAbbas
