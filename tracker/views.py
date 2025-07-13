@@ -14,7 +14,7 @@ from django.contrib import messages
 # Create your views here.
 @login_required
 def home(request):
-    transactions = Transaction.objects.all().order_by('-date')
+    transactions = Transaction.objects.filter(user=request.user).order_by('-date')
 
     # Filtering logic
     category = request.GET.get('category')

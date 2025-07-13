@@ -1,6 +1,6 @@
 # 💰 Expense Tracker - Django Project
 
-A full-featured personal expense tracking web app built with Django. Users can manage income and expenses, view insights, toggle dark/light mode, and get real-time feedback using modern UI elements.
+A personal expense tracking system built with Django that allows users to register, log in, and manage their own income and expense transactions. All features are user-specific and wrapped in a sleek, responsive UI.
 
 ---
 
@@ -23,12 +23,14 @@ This Django project allows users to:
 - ✅ User Authentication (Signup/Login/Logout)
 - ✅ Remember Me checkbox
 - ✅ Toast messages on success/error (login, signup, logout)
+- ✅ Per-user data (each user only sees their own transactions)  
 - ✅ Add / Edit / Delete transactions
 - ✅ Filter by category and date range
 - ✅ Search by description
 - ✅ Export to CSV
-- ✅ Pie chart by category (Chart.js)
-- ✅ Responsive Bootstrap UI
+- ✅ Chart.js pie chart of expenses by category
+- ✅ Auto-dismissing toast messages (Login / Logout / Actions)
+- ✅ Fully responsive UI (Bootstrap 5)
 - ✅ Dark Mode Toggle (persisted using localStorage)
 - ✅ Styled forms (login, signup, add/edit transaction)
 
@@ -39,7 +41,7 @@ This Django project allows users to:
 - Django (Python)
 - SQLite (default DB)
 - HTML + Bootstrap 5
-- Chart.js (for graphs)
+- Chart.js (for visualizing expenses)
 - JavaScript (localStorage, theme toggle, toasts)
 
 ---
@@ -89,6 +91,14 @@ expense_tracker/
 ├── manage.py
 ├── requirements.txt
 
+🔐 Authentication Flow
+Sign Up page (/signup)
+
+Login page (/login)
+
+Only logged-in users can access the dashboard (transactions)
+
+Each user can only access their own transactions
 
 📤 Export CSV
 Filter your transactions (by category/date), and click Export CSV to download your data instantly.
@@ -106,20 +116,21 @@ Theme preference is saved using localStorage and applies globally:
 
 -> Login / Signup
 
+
+
 🔔 Toast Messages
-User feedback is shown using toast alerts on:
-
--> Successful login, signup, logout
-
--> Form errors (like invalid credentials)
-
-Toasts auto-dismiss and are styled according to status (success/danger).
+All success/error actions like login, logout, signup, and transaction updates trigger toast alerts with auto-dismiss after 3 seconds.
 
 🔍 Search
 You can search your transactions by description.
 Search is case-insensitive and works alongside filters.
 “Reset” button clears all filters.
 
+📊 Chart Summary
+Expense transactions are visualized in a pie chart by category using Chart.js.
+
+🧪 Test Accounts
+You can register a new user or log in with a superuser.
 
 📄 License
 This project is open-source and available under the MIT License.
